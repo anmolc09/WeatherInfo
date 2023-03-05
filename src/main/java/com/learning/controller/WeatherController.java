@@ -16,7 +16,7 @@ public class WeatherController {
     private final WeatherService weatherService;
 
     @GetMapping("/weather")
-    public ResponseEntity<?> getWeather(@RequestParam Integer pincode) {
+    public ResponseEntity<WeatherInfo> getWeather(@RequestParam Integer pincode) {
         WeatherInfo weather = weatherService.getWeather(pincode);
         return ResponseEntity.ok(weather);
         //return new ResponseEntity<>(weather, HttpStatus.ACCEPTED);
